@@ -6,13 +6,10 @@
       <AddTodo
       @add-todo="addTodo"
       />
-     
-      <select v-model="value">
-        <option value="all">Все</option>
-        <option value="completed">Выполненные</option>
-        <option value="not-completed">Не выполненные</option>
-      </select>
-    <hr>
+      <TodoItemSelect 
+      @select-todo="selectTodo"
+      />
+      <hr>
       <TodoList
         v-if="filteredTodos.length != 0"
         :todos="filteredTodos"
@@ -26,6 +23,7 @@
 <script>
   import TodoList from '@/components/TodoList';
   import AddTodo from '@/components/AddTodo';
+  import TodoItemSelect from '@/components/TodoItemSelect';
   export default {
     name: 'App',
     data() {
@@ -33,9 +31,9 @@
         value:'all',
         todos: [
           {id: 1, title: 'создать приложение "Todo List" на JS', completed: true},
-          {id: 1, title: 'создать приложение "Todo List" на  VUE', completed: false},
-          {id: 1, title: 'добавить VUEX', completed: false},
-          {id: 1, title: 'добавить VUETIFY', completed: false}
+          {id: 2, title: 'создать приложение "Todo List" на  VUE', completed: false},
+          {id: 3, title: 'добавить VUEX', completed: false},
+          {id: 4, title: 'добавить VUETIFY', completed: false}
         ]
       }
     },
@@ -45,6 +43,9 @@
       },
       addTodo(newTodo) {
         this.filteredTodos.push(newTodo)
+      },
+      selectTodo(selected) {
+        this.value=selected
       }
     },
     computed: {
@@ -59,7 +60,7 @@
       }
     },
     components: {
-      TodoList, AddTodo
+      TodoList, AddTodo, TodoItemSelect
     }
   }
 </script>

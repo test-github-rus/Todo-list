@@ -6,7 +6,7 @@
       :index="index"
       :key="todo.id"
       @remove-todo="$emit('remove-todo', $event)"
-      />
+       />
    </ul>
 </template>
 
@@ -25,7 +25,7 @@
 <style scoped>
    ul {
       list-style: none;
-      margin: 0;
+      margin: 10;
       padding: 0;
    }
 </style>
