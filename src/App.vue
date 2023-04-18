@@ -31,7 +31,7 @@
         value:'all',
         todos: [
           {id: 1, title: 'создать приложение "Todo List" на JS', completed: true},
-          {id: 2, title: 'создать приложение "Todo List" на  VUE', completed: false},
+          {id: 2, title: 'создать приложение "Todo List" на  VUE', completed: true},
           {id: 3, title: 'добавить VUEX', completed: false},
           {id: 4, title: 'добавить VUETIFY', completed: false}
         ]
